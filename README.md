@@ -13,8 +13,9 @@
 
 6. ~~[Climate Data](https://climatedata.imf.org/pages/climatechange-data)~~
 
+7. [Climate Data in Months in Yukon, Canada](https://weatherandclimate.com/canada/yukon-territory#:~:text=Yukon%20Territory%2C%20Canada%20Climate&text=The%20city's%20yearly%20temperature%20is,%25%20of%20the%20time)%20annually.)
 
-[]()
+8. [Canda Station Climate Data*****](https://climatedata.ca/download/#station-download)
 []()
 []()
 []()
