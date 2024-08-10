@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Predictions</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Machine Learning Predictions</h1>
@@ -26,33 +27,5 @@
         <p id="gradient_boosting">Gradient Boosting: </p>
         <p id="decision_tree">Decision Tree: </p>
     </div>
-
-    <script>
-        document.getElementById('prediction-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const month = document.getElementById('month').value;
-            const temperature = document.getElementById('temperature').value;
-
-            fetch('http://127.0.0.1:5000/predict', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ month: month, temperature: temperature })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('linear').textContent = 'Linear Regression: ' + data.linear;
-                document.getElementById('random_forest').textContent = 'Random Forest: ' + data.random_forest;
-                document.getElementById('svr').textContent = 'SVR: ' + data.svr;
-                document.getElementById('knn').textContent = 'K-Nearest Neighbors: ' + data.knn;
-                document.getElementById('gradient_boosting').textContent = 'Gradient Boosting: ' + data.gradient_boosting;
-                document.getElementById('decision_tree').textContent = 'Decision Tree: ' + data.decision_tree;
-                document.getElementById('results').style.display = 'block';
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    </script>
 </body>
 </html>
