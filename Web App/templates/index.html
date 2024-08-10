@@ -18,7 +18,8 @@
         <button type="submit">Predict</button>
     </form>
 
-    <div id="results" class="result" style="display:none;">
+    <!--style="display:none;"-->
+    <div id="results" class="result" >
         <h2>Predictions</h2>
         <p id="linear">Linear Regression: </p>
         <p id="random_forest">Random Forest: </p>
@@ -27,5 +28,9 @@
         <p id="gradient_boosting">Gradient Boosting: </p>
         <p id="decision_tree">Decision Tree: </p>
     </div>
+
+    <!-- Link to the JS file -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
 </html>
