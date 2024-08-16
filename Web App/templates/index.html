@@ -8,29 +8,24 @@
 </head>
 <body>
     <h1>Machine Learning Predictions</h1>
-    <form id="prediction-form">
-        <label for="month">Month:</label><br>
-        <input type="number" id="month" name="month" required><br>
+    <form id="inputForm">
+        <label for="input1">Month:</label><br>
+        <input type="number" id="input1" name="month" required><br>
 
-        <label for="temperature">Temperature:</label><br>
-        <input type="number" id="temperature" name="temperature" required><br>
+        <label for="input2">Temperature:</label><br>
+        <input type="number" id="input2" name="temperature" required><br>
+
+        <label for="input3">Wind Speed:</label><br>
+        <input type="number" id="input3" name="wind_speed" required><br>
 
         <button type="submit">Predict</button>
     </form>
 
-    <!--style="display:none;"-->
-    <div id="results" class="result" >
-        <h2>Predictions</h2>
-        <p id="linear">Linear Regression: </p>
-        <p id="random_forest">Random Forest: </p>
-        <p id="svr">SVR: </p>
-        <p id="knn">K-Nearest Neighbors: </p>
-        <p id="gradient_boosting">Gradient Boosting: </p>
-        <p id="decision_tree">Decision Tree: </p>
+    <div id="result" class="result">
+        <h2>Latitude Prediction: <span id="latitude-result"></span></h2>
     </div>
 
     <!-- Link to the JS file -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
-
 </body>
 </html>
