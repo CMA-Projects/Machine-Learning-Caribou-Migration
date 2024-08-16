@@ -6,17 +6,21 @@ import joblib
 
 app = Flask(__name__)
 
-# Load the model
-model = joblib.load('models/DT_Model.h5')
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 try:
-    print("Model loading...")
-    model = tf.keras.models.load_model('models/NN_3features_predict_lat.h5')
-    print("Model loaded successfully")
+    print("----- Model 1 loading ... -----")
+    model1 = tf.keras.models.load_model('models/NN_4features_predict_lat.h5')
+    print("----- Model 1 loaded successfully -----")
+except Exception as e:
+    print(f"Error loading model: {e}")
+
+try:
+    print("----- Model 2 loading ... -----")
+    model2 = tf.keras.models.load_model('models/NN_3features_predict_lat.h5')
+    print("----- Model 2 loaded successfully -----")
 except Exception as e:
     print(f"Error loading model: {e}")
 
@@ -30,14 +34,14 @@ def predict():
         input_values = data.get('inputs')
         
         # Check if the input values have exactly 3 elements
-        if not input_values or len(input_values) != 3:
+        if not input_values or len(input_values) != 4:
             return jsonify({'error': 'Input must be a list of 3 numerical values'}), 400
         
         # Convert the input values to a 2D numpy array
         input_array = np.array([input_values])
         
         # Make the prediction
-        prediction = model.predict(input_array)
+        prediction = model1.predict(input_array)
         
         # Extract the output from the 2D array and convert to standard Python float
         output_value = float(prediction[0][0])
