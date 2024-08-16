@@ -1,8 +1,13 @@
 from flask import Flask, request, jsonify, render_template
 import numpy as np
 import tensorflow as tf
+import numpy as np
+import joblib 
 
 app = Flask(__name__)
+
+# Load the model
+model = joblib.load('models/DT_Model.h5')
 
 @app.route('/')
 def index():
