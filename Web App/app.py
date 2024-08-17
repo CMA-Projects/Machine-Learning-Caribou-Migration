@@ -12,14 +12,14 @@ def index():
 
 try:
     print("----- Model 1 loading ... -----")
-    model1 = tf.keras.models.load_model('models/NN_4features_predict_lat.h5')
+    model1 = tf.keras.models.load_model('models/model1.h5')
     print("----- Model 1 loaded successfully -----")
 except Exception as e:
     print(f"Error loading model: {e}")
 
 try:
     print("----- Model 2 loading ... -----")
-    model2 = tf.keras.models.load_model('models/NN_3features_predict_lat.h5')
+    model2 = tf.keras.models.load_model('models/model2.h5')
     print("----- Model 2 loaded successfully -----")
 except Exception as e:
     print(f"Error loading model: {e}")

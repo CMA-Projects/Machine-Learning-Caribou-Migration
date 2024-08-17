@@ -1,0 +1,8 @@
+# features
+day,month,temperature,wind_speed
+
+# targets
+latitude
+
+# years_to_pick
+2015,2016,2017,2018
